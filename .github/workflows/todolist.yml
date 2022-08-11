@@ -1,0 +1,28 @@
+name: Deploy TodoList
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set node version to 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+
+      - name: Build TodoList
+        run: cd frameworks/react/todo-list && yarn && yarn build
+
+      - name: Deploy site
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: todo-list
+          folder: build
+
