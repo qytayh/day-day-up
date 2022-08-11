@@ -1,7 +1,7 @@
 import './App.css';
 import TodoList from './components/List'
 import ToolBar from './components/ToolBar'
-import {useRef, useState} from "react";
+import {useRef} from "react";
 
 function App() {
   const toolBarRef = useRef()
