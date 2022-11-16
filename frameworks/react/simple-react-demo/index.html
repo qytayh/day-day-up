@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="mini-react.js"></script>
+</head>
+<body>
+<div id="app"></div>
+</body>
+<script>
+  class Button extends Component {
+    constructor() {
+      super();
+      this.state = {
+        count: 1
+      }
+    }
+
+    onClick = () => {
+      let {count} = this.state
+      count = count + 1
+      this.setState({
+        count
+      })
+    }
+
+    render() {
+      return `<button>
+              按钮
+              </button>  ${this.state.count}`
+    }
+  }
+
+  React.renderDom(new Button(), document.getElementById('app'))
+</script>
+</html>
