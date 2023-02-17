@@ -402,7 +402,16 @@ promise 和 async/await的区别
 - v-bind
 - v-if
 - v-on
-- 
+- v-text
+- v-show
+- v-if
+- v-else
+- v-else-if
+- v-for
+- v-model
+- v-slot
+- v-pre
+- v-cloak
 
 ## vue的修饰符  v-model的修饰符
 
