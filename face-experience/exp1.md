@@ -78,20 +78,19 @@ Expires和Cache-Control
     缓存过期时间，用来指定资源到期的时间，是服务器具体的时间点
     
     Expires是http/1 的产物，受限于本地时间，如果修改了本地时间，可能会造成缓存失效
-  - Cache-Control：
+- Cache-Control：
     
-      http/1.1的产物，比如设置Cache-control：max-age=300，单位是s，代表5分钟
-      内再次请求就会走强缓存
+    http/1.1的产物，比如设置Cache-control：max-age=300，单位是s，代表5分钟
+    内再次请求就会走强缓存
     
-      ```
-      public：所有内容都将被缓存（客户端/代理服务器/CDN等）
-      private：只有客户端可以缓存，Cache-Control默认值
-      no-cache：客户端缓存内容，但是是否使用缓存则需要经过协商缓存来验证决定
-      no-store：所有内容都不会被缓存，即不使用强制缓存，也不使用协商缓存
-      max-age=xxx：缓存将在xxx秒后失效
-      ```
-
-> Cache-Control 优先级高于Expires
+    ```
+    public：所有内容都将被缓存（客户端/代理服务器/CDN等）
+    private：只有客户端可以缓存，Cache-Control默认值
+    no-cache：客户端缓存内容，但是是否使用缓存则需要经过协商缓存来验证决定
+    no-store：所有内容都不会被缓存，即不使用强制缓存，也不使用协商缓存
+    max-age=xxx：缓存将在xxx秒后失效
+    ```
+  > Cache-Control 优先级高于Expires
 
 #### 协商缓存
 
